@@ -1,0 +1,53 @@
+.home-page {
+  display: flex;
+  justify-content: center;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 40px;
+    width: 800px;
+    padding: 20px;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 20px;
+    width: 100%;
+
+    &-title {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    &-input {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 5px;
+      height: 36px;
+      font-size: 20px;
+    }
+
+    &-button {
+      cursor: pointer;
+      border: none;
+      background: #ccc;
+
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+      transition: background 0.3s ease;
+
+      &:hover {
+        background: #999;
+      }
+    }
+  }
+
+  &__news {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 40px;
+  }
+}
