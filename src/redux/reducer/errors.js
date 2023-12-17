@@ -2,23 +2,23 @@ import { SET_LATEST_NEWS_ERROR, SET_POPULAR_NEWS_ERROR } from "../constants";
 
 const initialState = {
   latestNewsError: "",
-  popularNewsError: ""
+  popularNewsError: "",
 };
 
 const errors = (state = initialState, { type, payload }) => {
-
   switch (type) {
     case SET_LATEST_NEWS_ERROR:
       return {
         ...state,
-        latestNewsError: payload
+        latestNewsError: payload,
       };
     case SET_POPULAR_NEWS_ERROR:
       return {
         ...state,
-        popularNewsError: payload
+        popularNewsError: payload,
       };
-    default: return state;
+    default:
+      return state;
   }
 };
 

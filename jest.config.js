@@ -12,10 +12,11 @@ module.exports = {
     "!jest.config.js",
   ],
   setupFiles: ["react-app-polyfill/jsdom", "jest-canvas-mock"],
-  setupFilesAfterEnv: ["<rootDir>/jest.setup.js", "<rootDir>/src/__tests__/utils/setTestEnvVars.js"],
-  testMatch: [
-    "<rootDir>/src/__tests__/**/*.test.{js,jsx,ts,tsx}",
+  setupFilesAfterEnv: [
+    "<rootDir>/jest.setup.js",
+    "<rootDir>/src/__tests__/utils/setTestEnvVars.js",
   ],
+  testMatch: ["<rootDir>/src/__tests__/**/*.test.{js,jsx,ts,tsx}"],
   testPathIgnorePatterns: ["<rootDir>/node_modules/", "/__tests__/utils/"],
   testEnvironment: "jsdom",
   transformIgnorePatterns: [
@@ -26,7 +27,7 @@ module.exports = {
   moduleNameMapper: {
     "^react-native$": "react-native-web",
     "\\.(css|sass|scss)$": "identity-obj-proxy",
-    "swiper/css*": "identity-obj-proxy"
+    "swiper/css*": "identity-obj-proxy",
   },
   coveragePathIgnorePatterns: ["/__tests__/utils/"],
   moduleFileExtensions: [
@@ -39,11 +40,11 @@ module.exports = {
     "json",
     "web.jsx",
     "jsx",
-    "node"
+    "node",
   ],
   watchPlugins: [
     "jest-watch-typeahead/filename",
-    "jest-watch-typeahead/testname"
+    "jest-watch-typeahead/testname",
   ],
-  resetMocks: false
+  resetMocks: false,
 };

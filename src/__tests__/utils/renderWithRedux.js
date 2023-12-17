@@ -12,9 +12,7 @@ function renderWithRedux(ui, renderOptions) {
   const Wrapper = ({ children }) => {
     return (
       <Provider store={store}>
-        <BrowserRouter>
-          {children}
-        </BrowserRouter>
+        <BrowserRouter>{children}</BrowserRouter>
       </Provider>
     );
   };

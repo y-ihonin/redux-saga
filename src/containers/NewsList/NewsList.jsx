@@ -7,13 +7,7 @@ const NewsList = ({ title, news, error }) => {
   return (
     <div className="news-list">
       <div className="news-list__title">{title}</div>
-      {
-        error && (
-          <div className="news-list__error">
-            {error}
-          </div>
-        )
-      }
+      {error && <div className="news-list__error">{error}</div>}
       <ul className="news-list__list">
         {news.map((newsItem, index) => (
           <li className="news-list__item" key={index}>
@@ -31,10 +25,10 @@ NewsList.propTypes = {
   news: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string.isRequired,
-      created_at: PropTypes.string.isRequired
+      created_at: PropTypes.string.isRequired,
     })
   ).isRequired,
-  error: PropTypes.string
+  error: PropTypes.string,
 };
 
 export default NewsList;

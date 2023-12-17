@@ -18,7 +18,9 @@ function Home() {
   const [queryForSearch, setQueryForSearch] = useState("");
 
   const dispatch = useDispatch();
-  const { latestNewsError, popularNewsError } = useSelector((state) => state.errors);
+  const { latestNewsError, popularNewsError } = useSelector(
+    (state) => state.errors
+  );
 
   const handleNews = () => {
     dispatch(getNews(queryForSearch));
@@ -45,8 +47,16 @@ function Home() {
           </button>
         </div>
         <div className="home-page__news">
-          <NewsList title="Popular news" news={popularNews} error={popularNewsError} />
-          <NewsList title={`${queryForSearch} news`} news={latestNews} error={latestNewsError} />
+          <NewsList
+            title="Popular news"
+            news={popularNews}
+            error={popularNewsError}
+          />
+          <NewsList
+            title={`${queryForSearch} news`}
+            news={latestNews}
+            error={latestNewsError}
+          />
         </div>
       </div>
     </div>

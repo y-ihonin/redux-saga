@@ -12,4 +12,3 @@ describe("tests for the Home page", () => {
     expect(getByTestId("home-page")).toBeInTheDocument();
   });
 });
-

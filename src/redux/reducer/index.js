@@ -9,7 +9,7 @@ import errors from "./errors";
 const newsPersistConfig = {
   key: "news",
   storage: storage,
-  blacklist: ["popularNews"]
+  blacklist: ["popularNews"],
 };
 
 const reducer = combineReducers({

@@ -1,9 +1,13 @@
-import { SET_LATEST_NEWS, SET_POPULAR_NEWS, SET_POPULAR_QUERY } from "../constants";
+import {
+  SET_LATEST_NEWS,
+  SET_POPULAR_NEWS,
+  SET_POPULAR_QUERY,
+} from "../constants";
 
 const initialState = {
   latestNews: [],
   popularNews: [],
-  popularQuery: ""
+  popularQuery: "",
 };
 
 const news = (state = initialState, { type, payload }) => {
@@ -11,17 +15,17 @@ const news = (state = initialState, { type, payload }) => {
     case SET_LATEST_NEWS:
       return {
         ...state,
-        latestNews: payload
+        latestNews: payload,
       };
     case SET_POPULAR_NEWS:
       return {
         ...state,
-        popularNews: payload
+        popularNews: payload,
       };
     case SET_POPULAR_QUERY:
       return {
         ...state,
-        popularQuery: payload
+        popularQuery: payload,
       };
     default:
       return state;

@@ -5,8 +5,14 @@ import { throwError } from "redux-saga-test-plan/providers";
 // helpers
 import { getLatestNews, getPopularNews } from "../../api";
 import { handLatestNews, handPopularNews } from "../../redux/sagas";
-import { setLatestNews, setPopularNews } from "../../redux/actions/actionCreator";
-import { SET_LATEST_NEWS_ERROR, SET_POPULAR_NEWS_ERROR } from "../../redux/constants";
+import {
+  setLatestNews,
+  setPopularNews,
+} from "../../redux/actions/actionCreator";
+import {
+  SET_LATEST_NEWS_ERROR,
+  SET_POPULAR_NEWS_ERROR,
+} from "../../redux/constants";
 
 // mock data
 const queryForLatestNews = "react";
@@ -27,7 +33,10 @@ describe("handLatestNews saga", () => {
 
     return expectSaga(handLatestNews, queryForLatestNews)
       .provide([[call(getLatestNews, queryForLatestNews), throwError(error)]])
-      .put({ type: SET_LATEST_NEWS_ERROR, payload: `Error fetching latest news: ${error}` })
+      .put({
+        type: SET_LATEST_NEWS_ERROR,
+        payload: `Error fetching latest news: ${error}`,
+      })
       .run();
   });
 });
@@ -47,8 +56,10 @@ describe("handPopularNews saga", () => {
 
     return expectSaga(handPopularNews)
       .provide([[call(getPopularNews), throwError(error)]])
-      .put({ type: SET_POPULAR_NEWS_ERROR, payload: `Error fetching popular news: ${error}` })
+      .put({
+        type: SET_POPULAR_NEWS_ERROR,
+        payload: `Error fetching popular news: ${error}`,
+      })
       .run();
   });
 });
-

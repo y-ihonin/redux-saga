@@ -21,7 +21,10 @@ const composeEnhancers =
     ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({})
     : compose;
 
-const store = createStore(persistedReducer, composeEnhancers(applyMiddleware(sagaMiddleware)));
+const store = createStore(
+  persistedReducer,
+  composeEnhancers(applyMiddleware(sagaMiddleware))
+);
 
 const persistor = persistStore(store);
 
